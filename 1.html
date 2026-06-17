@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Poziom 1 - zablokowany</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="kicker">vibecoding // brama</div>
+    <h1>Poziom 1 jest zaszyfrowany</h1>
+    <p class="lead">Treść tego poziomu jest zaszyfrowana (AES-GCM) i nie ma jej w tej stronie -
+    jest tu tylko szyfrogram. Podaj <b>hasło z zajęć</b>, żeby ją odszyfrować. Bez hasła nie da się
+    jej wyciągnąć ani z konsoli, ani przez pobranie adresu narzędziem AI - bo tu jej po prostu nie ma.</p>
+  </header>
+
+  <div class="card" id="brama">
+    <form id="formularz" class="actions" style="gap:10px;flex-wrap:wrap">
+      <input id="haslo" type="password" autocomplete="off" autofocus
+        placeholder="hasło z zajęć"
+        style="flex:1;min-width:220px;padding:11px 13px;border-radius:9px;border:1px solid var(--line);background:#0b1220;color:inherit;font-size:15px">
+      <button class="primary" id="otworz" type="submit">Odszyfruj poziom</button>
+      <span class="status" id="status">Czeka na hasło...</span>
+    </form>
+  </div>
+
+  <footer class="foot"><a href="index.html">&larr; wszystkie poziomy</a></footer>
+</div>
+
+<script>
+(function () {
+  "use strict";
+  var PAYLOAD = "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";
+  var ITER = 150000;
+  var SS_KEY = "scrapowanie_gate_pw";
+
+  function b64ToBytes(b64) {
+    var bin = atob(b64), u = new Uint8Array(bin.length);
+    for (var i = 0; i < bin.length; i++) u[i] = bin.charCodeAt(i);
+    return u;
+  }
+
+  async function decrypt(pw) {
+    var raw = b64ToBytes(PAYLOAD);
+    if (!(raw[0] === 0x53 && raw[1] === 0x47 && raw[2] === 0x01 && raw[3] === 0x00)) {
+      throw new Error("format");
+    }
+    var salt = raw.slice(4, 20), iv = raw.slice(20, 32), ct = raw.slice(32);
+    var base = await crypto.subtle.importKey(
+      "raw", new TextEncoder().encode(pw.normalize("NFC")), "PBKDF2", false, ["deriveKey"]);
+    var key = await crypto.subtle.deriveKey(
+      { name: "PBKDF2", salt: salt, iterations: ITER, hash: "SHA-256" },
+      base, { name: "AES-GCM", length: 256 }, false, ["decrypt"]);
+    var pt = await crypto.subtle.decrypt({ name: "AES-GCM", iv: iv }, key, ct);
+    return new TextDecoder().decode(pt);
+  }
+
+  function render(html) {
+    document.open();
+    document.write(html);
+    document.close();
+  }
+
+  function setStatus(msg, cls) {
+    var el = document.getElementById("status");
+    if (el) { el.textContent = msg; el.className = "status" + (cls ? " " + cls : ""); }
+  }
+
+  async function unlock(pw, fromSession) {
+    try {
+      var html = await decrypt(pw);          // złe hasło -> tag GCM nie pasuje -> wyjątek
+      try { sessionStorage.setItem(SS_KEY, pw); } catch (e) {}
+      render(html);
+    } catch (e) {
+      if (fromSession) {
+        try { sessionStorage.removeItem(SS_KEY); } catch (e2) {}
+        setStatus("Czeka na hasło...", "");
+      } else {
+        setStatus("Błąd odszyfrowania - sprawdź hasło lub skontaktuj się z prowadzącym.", "bad");
+      }
+    }
+  }
+
+  document.getElementById("formularz").addEventListener("submit", function (ev) {
+    ev.preventDefault();
+    var pw = document.getElementById("haslo").value;
+    if (!pw) { setStatus("Wpisz hasło.", "bad"); return; }
+    setStatus("Odszyfrowywanie...", "");
+    unlock(pw, false);
+  });
+
+  // auto-unlock: jeśli hasło już jest w sesji (odblokowano inny poziom albo reload 6/7)
+  var saved = null;
+  try { saved = sessionStorage.getItem(SS_KEY); } catch (e) {}
+  if (saved) { setStatus("Odszyfrowywanie...", ""); unlock(saved, true); }
+})();
+</script>
+</body>
+</html>

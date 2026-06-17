@@ -1,0 +1,14 @@
+{
+  "name": "scrapowanie-z-konsoli",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Materiał edukacyjny: 7 broniących się stron + brama szyfrująca treść poziomów",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "node build.mjs",
+    "test": "node build.mjs --test-only"
+  }
+}

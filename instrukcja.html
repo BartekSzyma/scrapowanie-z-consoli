@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Instrukcja - Scrapowanie z konsoli</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="kicker">vibecoding // instrukcja</div>
+    <h1>Twoje zadanie</h1>
+    <p class="lead">Każda z 7 stron ukrywa kultowy cytat z science fiction i każe „odpowiedzieć na
+    10 pytań”, żeby go zobaczyć. Twoim celem jest <b>wyświetlić cytat bez uczciwego przechodzenia
+    formularza</b> - obejść obronę, korzystając z konsoli i narzędzi przeglądarki.</p>
+  </header>
+
+  <div class="note">
+    <h3>Reguły gry</h3>
+    <ul>
+      <li>Każdy poziom jest zaszyfrowany - przy wejściu poda <b>hasło z zajęć</b>, żeby odszyfrować treść.</li>
+      <li>Dozwolone: konsola, DevTools, podgląd źródła, ustawienia przeglądarki. Wszystko, co masz w kliencie.</li>
+      <li>Nie zgadujesz odpowiedzi na pytania quizu - chodzi o <i>obejście</i>, nie o wiedzę o popkulturze.</li>
+      <li>Nie edytujesz plików projektu na dysku. Pracujesz na stronie tak, jak ją dostała przeglądarka.</li>
+      <li>Cel zaliczony, gdy widzisz pełny cytat wraz ze źródłem.</li>
+    </ul>
+  </div>
+
+  <div class="note" style="border-left-color: var(--gold); background: rgba(252,211,77,.06)">
+    <h3>Rozgrzewka z konsolą</h3>
+    <ul>
+      <li><b>Konsola:</b> <kbd>F12</kbd> lub <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>J</kbd>, zakładka <b>Console</b>.</li>
+      <li><b>Podgląd źródła:</b> <kbd>Ctrl</kbd>+<kbd>U</kbd> (albo <code>view-source:</code> przed adresem).</li>
+      <li><b>Paleta poleceń DevTools:</b> <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> (są tam m.in. opcje JavaScriptu).</li>
+      <li><b>Przy stronach, które się odświeżają:</b> włącz <b>Preserve log</b>, żeby konsola nie znikała.</li>
+      <li>Przydatne tropy do eksperymentów: <code>document.querySelector(...)</code>, <code>.textContent</code>,
+      <code>getComputedStyle(...)</code>, <code>atob(...)</code>, nadpisywanie funkcji i zmiennych w <code>window</code>.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3 style="margin-top:0">Co masz zrobić na każdym poziomie</h3>
+    <div class="q"><p>1 - Schowane w DOM</p><span class="status">Cytat jest w tej stronie, ale schowany, a przycisk zablokowany. Znajdź go w strukturze strony i pokaż.</span></div>
+    <div class="q"><p>2 - Walidacja w JS</p><span class="status">Cytat pojawia się dopiero, gdy kod uzna odpowiedzi za poprawne. Ta decyzja zapada w przeglądarce - spraw, by wypadła po Twojej myśli.</span></div>
+    <div class="q"><p>3 - Zakodowany tekst</p><span class="status">Prawdziwego cytatu nie ma w źródle otwartym tekstem - jest zakodowany. To, co wygląda jak cytat, bywa zmyłką. Odkoduj właściwy.</span></div>
+    <div class="q"><p>4 - Zatrute kopiowanie</p><span class="status">Cytat zobaczysz, ale obrona utrudnia jego wykradzenie: zaznaczanie, prawy klawisz, schowek. Wydobądź czysty tekst i podpis mimo to.</span></div>
+    <div class="q"><p>5 - Aktywna obrona</p><span class="status">Kilka warstw naraz, a stan żyje w pamięci żywej strony. Samo czytanie źródła nie wystarczy.</span></div>
+    <div class="q"><p>6 - Auto-refresh</p><span class="status">Strona przeładowuje się i czyści konsolę. Wyścig z zegarem przegrasz - wyjdź poza JavaScript tej strony.</span></div>
+    <div class="q"><p>7 - Boss: refresh + JS</p><span class="status">Jak 6, ale cytat wstrzykuje JavaScript (w źródle jest tylko zaszyfrowany blob). Zatrzymaj wykonanie, nie zabijając JS.</span></div>
+  </div>
+
+  <div class="note" style="border-left-color: var(--accent2); background: rgba(192,132,252,.06)">
+    <h3>Utknąłeś?</h3>
+    <p style="margin:0">Eksperymentuj - nic tu nie zepsujesz, odświeżenie przywraca stan. A jeśli „obrona”
+    wydaje Ci się nie do przejścia, przypomnij sobie pointę: <b>cokolwiek trafia do przeglądarki,
+    da się stamtąd wyciągnąć. Obrona po stronie klienta to teatr.</b></p>
+  </div>
+
+  <footer class="foot"><a href="index.html">← strona startowa</a> &nbsp;·&nbsp; <a href="1.html">zacznij od poziomu 1 →</a></footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scrapowanie z konsoli - 7 wyzwań</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="kicker">vibecoding // warsztat konsoli</div>
+    <h1>Obejdź formularz, odsłoń cytat</h1>
+    <p class="lead">Siedem broniących się stron. Każda ukrywa kultowy cytat z science fiction i każe
+    „odpowiedzieć na 10 pytań”, żeby go zobaczyć. Twoim zadaniem nie jest odpowiadać uczciwie -
+    tylko <b>obejść obronę z konsoli przeglądarki</b> i wydobyć tekst.</p>
+    <div class="actions" style="margin-top:14px">
+      <a class="tile" href="instrukcja.html" style="padding:12px 18px"><b>📖 Najpierw przeczytaj instrukcję</b> - cel, reguły gry i rozgrzewka z konsolą</a>
+    </div>
+    <p class="lead" style="margin-top:12px;font-size:14px;opacity:.85">🔒 Każdy poziom jest zaszyfrowany - przy wejściu poprosi o <b>hasło z zajęć</b>. Bez niego treści nie ma w stronie (samo wklejenie adresu do AI nic nie da). Po odszyfrowaniu zaczyna się właściwe zadanie: obejść obronę z konsoli.</p>
+  </header>
+
+  <div class="grid">
+    <a class="tile" href="1.html"><div class="n">1</div><div class="t">Schowane w DOM</div><div class="d">Ukryty element, zablokowany przycisk. Rozgrzewka.</div></a>
+    <a class="tile" href="2.html"><div class="n">2</div><div class="t">Walidacja w JS</div><div class="d">Reveal po sprawdzeniu. Oszukaj walidator.</div></a>
+    <a class="tile" href="3.html"><div class="n">3</div><div class="t">Zakodowany tekst</div><div class="d">base64 / XOR i fałszywy wiersz na zmyłkę.</div></a>
+    <a class="tile" href="4.html"><div class="n">4</div><div class="t">Zatrute kopiowanie</div><div class="d">Ctrl+C zwraca śmieci. Blokada zaznaczania.</div></a>
+    <a class="tile" href="5.html"><div class="n">5</div><div class="t">Aktywna obrona</div><div class="d">Dynamiczne pola, obserwator, anty-devtools.</div></a>
+    <a class="tile" href="6.html"><div class="n">6</div><div class="t">Auto-refresh (aha!)</div><div class="d">Strona się przeładowuje. Wyjdź poza JS.</div></a>
+    <a class="tile" href="7.html"><div class="n">7</div><div class="t">Boss: refresh + JS</div><div class="d">Tekst wstrzykiwany. Zatrzymaj wykonanie.</div></a>
+  </div>
+
+  <div class="note">
+    <h3>Jak otworzyć konsolę?</h3>
+    <ul>
+      <li><b>Konsola:</b> <kbd>F12</kbd> lub <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>J</kbd>, zakładka <b>Console</b>.</li>
+      <li><b>Podgląd źródła:</b> <kbd>Ctrl</kbd>+<kbd>U</kbd> (albo wpisz <code>view-source:</code> przed adresem).</li>
+      <li><b>Polecenia palety:</b> <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> w DevTools (np. „Disable JavaScript”).</li>
+      <li><b>Przy poziomach z odświeżaniem:</b> w konsoli włącz <b>Preserve log</b>, żeby logi nie znikały.</li>
+    </ul>
+  </div>
+
+  <div class="note" style="border-left-color: var(--accent2); background: rgba(192,132,252,.06)">
+    <h3>O co tak naprawdę chodzi</h3>
+    <p style="margin:0">Żadna z tych obron nie jest „nie do złamania” - bo cokolwiek trafia do przeglądarki,
+    da się stamtąd wydobyć, a model AI tylko to przyspiesza. To jest pointa, nie porażka:
+    <b>obrona po stronie klienta to teatr. Nigdy nie ufaj klientowi.</b></p>
+  </div>
+
+  <footer class="foot">Materiał edukacyjny - kurs vibecodingu. Kultowe cytaty sci-fi przytoczone jako krótkie cytaty.</footer>
+</div>
+</body>
+</html>

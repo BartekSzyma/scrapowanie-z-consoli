@@ -1,0 +1,10 @@
+# materiały tylko dla prowadzącego - nie publikujemy gotowców
+PROWADZACY.md
+docs/
+
+# plaintext poziomów - źródło prawdy, NIGDY do publicznego repo
+# (do repo trafiają tylko zaszyfrowane 1.html..7.html w katalogu głównym)
+src/
+
+# pliki robocze / testy
+_test_*
